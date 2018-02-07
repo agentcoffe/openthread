@@ -92,7 +92,7 @@ typedef struct otDeviceList
 #endif
 
 /**
- * This enumeration represents error codes used throughout OpenThread.
+ * This enum eration represents error codes used throughout OpenThread. : int64_t 
  */
 typedef enum otError
 {
@@ -360,7 +360,7 @@ typedef struct otSecurityPolicy
 } otSecurityPolicy;
 
 /**
- * This enumeration defines the Security Policy TLV flags.
+ * This enum eration defines the Security Policy TLV flags. : int64_t 
  *
  */
 enum
@@ -565,7 +565,7 @@ typedef struct otCommissioningDataset
 } otCommissioningDataset;
 
 /**
- * This enumeration represents meshcop TLV types.
+ * This enum eration represents meshcop TLV types. : int64_t 
  *
  */
 typedef enum otMeshcopTlvType
@@ -636,7 +636,7 @@ typedef struct otLinkModeConfig
 } otLinkModeConfig;
 
 /**
- * This enumeration represents flags that indicate what configuration or state has changed within OpenThread.
+ * This enum eration represents flags that indicate what configuration or state has changed within OpenThread. : int64_t 
  *
  */
 enum
@@ -998,7 +998,7 @@ typedef struct otNetifMulticastAddress
 } otNetifMulticastAddress;
 
 /**
- * This enumeration represents the list of allowable values for an InterfaceId.
+ * This enum eration represents the list of allowable values for an InterfaceId. : int64_t 
  */
 typedef enum otNetifInterfaceId
 {

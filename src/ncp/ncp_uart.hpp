@@ -67,14 +67,14 @@ public:
 
 private:
 
-    enum
+    enum : uint16_t 
     {
         kUartTxBufferSize = OPENTHREAD_CONFIG_NCP_UART_TX_CHUNK_SIZE,  // Uart tx buffer size.
         kRxBufferSize = OPENTHREAD_CONFIG_NCP_UART_RX_BUFFER_SIZE,     // Rx buffer size (should be large enough to fit
                                                                        // one whole (decoded) received frame).
     };
 
-    enum UartTxState
+    enum UartTxState : uint8_t 
     {
         kStartingFrame,          // Starting a new frame.
         kEncodingFrame,          // In middle of encoding a frame.

@@ -70,7 +70,7 @@ namespace Coap {
 class Header : public otCoapHeader
 {
 public:
-    enum
+    enum : uint8_t 
     {
         kVersion1           = 1,                         ///< Version 1
         kMinHeaderLength    = 4,                         ///< Minimum header length
@@ -249,7 +249,7 @@ public:
          * Protocol Constants
          *
          */
-        enum
+        enum : uint8_t 
         {
             kOptionDeltaOffset   = 4,                          ///< Delta Offset
             kOptionDeltaMask     = 0xf << kOptionDeltaOffset,  ///< Delta Mask

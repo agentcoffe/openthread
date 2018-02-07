@@ -64,7 +64,7 @@ public:
      * MeshCoP TLV Types.
      *
      */
-    enum Type
+    enum Type : int32_t 
     {
         kChannel                 = OT_MESHCOP_TLV_CHANNEL,                   ///< Channel TLV
         kPanId                   = OT_MESHCOP_TLV_PANID,                     ///< PAN ID TLV
@@ -739,7 +739,7 @@ public:
     }
 
 private:
-    enum
+    enum : uint8_t 
     {
         kMaxLength = 64,
     };
@@ -829,7 +829,7 @@ public:
      */
     void SetRotationTime(uint16_t aRotationTime) { mRotationTime = HostSwap16(aRotationTime); }
 
-    enum
+    enum : int32_t 
     {
         kObtainMasterKeyFlag      = OT_SECURITY_POLICY_OBTAIN_MASTER_KEY,      ///< Obtaining the Master Key
         kNativeCommissioningFlag  = OT_SECURITY_POLICY_NATIVE_COMMISSIONING,   ///< Native Commissioning
@@ -910,7 +910,7 @@ public:
      * State values.
      *
      */
-    enum State
+    enum State : int8_t 
     {
         kReject  = -1,  ///< Reject
         kPending = 0,   ///< Pending
@@ -1172,7 +1172,7 @@ public:
      */
     void SetDelayTimer(uint32_t aDelayTimer) { mDelayTimer = HostSwap32(aDelayTimer); }
 
-    enum
+    enum : int32_t 
     {
         kMaxDelayTimer     = 259200,  ///< maximum delay timer value for a Pending Dataset in seconds
         kDelayTimerMinimal = 30000,   ///< Minimum Delay Timer value for a Pending Operational Dataset (ms)
@@ -1544,7 +1544,7 @@ exit:
     }
 
 private:
-    enum
+    enum : uint8_t 
     {
         kMaxLength = 64,
     };
@@ -1605,7 +1605,7 @@ exit:
     }
 
 private:
-    enum
+    enum : uint8_t 
     {
         kMaxLength = 32,
     };
@@ -1666,7 +1666,7 @@ exit:
     }
 
 private:
-    enum
+    enum : uint8_t 
     {
         kMaxLength = 32,
     };
@@ -1727,7 +1727,7 @@ exit:
     }
 
 private:
-    enum
+    enum : uint8_t 
     {
         kMaxLength = 16,
     };
@@ -1788,7 +1788,7 @@ exit:
     }
 
 private:
-    enum
+    enum : uint8_t 
     {
         kMaxLength = 64,
     };
@@ -1925,7 +1925,7 @@ public:
 private:
     uint8_t mOui[3];
 
-    enum
+    enum : int16_t 
     {
         kBuildOffset = 4,
         kBuildMask = 0xfff << kBuildOffset,
@@ -1934,7 +1934,7 @@ private:
     };
     uint16_t mBuildRevision;
 
-    enum
+    enum : int16_t 
     {
         kMinorOffset = 4,
         kMinorMask = 0xf << kMinorOffset,
@@ -2010,7 +2010,7 @@ public:
     }
 
 private:
-    enum
+    enum : int16_t 
     {
         kVersionOffset = 4,
         kVersionMask = 0xf << kVersionOffset,
@@ -2087,7 +2087,7 @@ public:
     }
 
 private:
-    enum
+    enum : int16_t 
     {
         kVersionOffset = 4,
         kVersionMask = 0xf << kVersionOffset,

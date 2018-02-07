@@ -17,7 +17,7 @@
  * @retval ::OT_ERROR_NONE    Initialize flash driver success.
  * @retval ::OT_ERROR_FAILED  Initialize flash driver fail.
  */
-otError utilsFlashInit(void);
+otError utilsFlashInit(void)
 {
     otError error = OT_ERROR_NONE;
 
@@ -50,7 +50,7 @@ uint32_t utilsFlashGetSize(void)
  * @retval OT_ERROR_FAILED         Erase flash operation is not started.
  * @retval OT_ERROR_INVALID_ARGS    aAddress is out of range of flash or not aligend.
  */
-otError utilsFlashErasePage(uint32_t aAddress);
+otError utilsFlashErasePage(uint32_t aAddress)
 {
     otError error = OT_ERROR_NONE;
 
@@ -68,7 +68,7 @@ exit:
   * @retval OT_ERROR_NONE           Flash is ready for any operation.
   * @retval OT_ERROR_BUSY           Flash is busy.
   */
-otError utilsFlashStatusWait(uint32_t aTimeout);
+otError utilsFlashStatusWait(uint32_t aTimeout)
 {
     otError error = OT_ERROR_NONE;
 

@@ -98,7 +98,7 @@ namespace Ip6 {
 class Ip6
 {
 public:
-    enum
+    enum : int16_t 
     {
         kDefaultHopLimit = 64,
         kMaxDatagramLength = 1280,
@@ -360,18 +360,23 @@ public:
     const PriorityQueue &GetSendQueue(void) const { return mSendQueue; }
 
     /**
-     * This static method converts an `IpProto` enumeration to a string.
+     * This static method converts an `IpProto` enum eration to a string.
      *
-     * @returns The string representation of an IP protocol enumeration.
+     * @returns The string representation of an IP protocol enum eration.
      *
      */
     static const char *IpProtoToString(IpProto aIpProto);
 
+    // 4
     Routes mRoutes;
+    // 8
     Icmp mIcmp;
+    // 6
     Udp mUdp;
+    // 164
     Mpl mMpl;
 
+    // 4118
     MessagePool mMessagePool;
 
 private:
@@ -395,7 +400,9 @@ private:
 
     bool mForwardingEnabled;
 
+    // 16
     PriorityQueue mSendQueue;
+    // 8
     Tasklet mSendQueueTask;
 
     otIp6ReceiveCallback mReceiveIp6DatagramCallback;

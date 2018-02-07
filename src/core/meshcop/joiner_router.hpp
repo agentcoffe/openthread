@@ -82,7 +82,7 @@ public:
     otError SetJoinerUdpPort(uint16_t aJoinerUdpPort);
 
 private:
-    enum
+    enum : uint8_t 
     {
         kDelayJoinEnt = 50,  ///< milliseconds
     };

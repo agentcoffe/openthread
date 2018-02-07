@@ -28,7 +28,7 @@
 
 #include <openthread/config.h>
 
-#include <assert.h>
+//#include <assert.h>
 
 #include <openthread/cli.h>
 #include <openthread/diag.h>
@@ -69,14 +69,14 @@ int main(int argc, char *argv[])
 
     // Call to allocate the buffer
     otInstanceBuffer = (uint8_t *)malloc(otInstanceBufferLength);
-    assert(otInstanceBuffer);
+    //assert(otInstanceBuffer);
 
     // Initialize OpenThread with the buffer
     sInstance = otInstanceInit(otInstanceBuffer, &otInstanceBufferLength);
 #else
     sInstance = otInstanceInitSingle();
 #endif
-    assert(sInstance);
+    //assert(sInstance);
 
     otCliUartInit(sInstance);
 

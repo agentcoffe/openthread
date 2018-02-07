@@ -87,7 +87,7 @@ namespace NetworkData {
 class NetworkData: public ThreadNetifLocator
 {
 public:
-    enum
+    enum : uint8_t 
     {
         kMaxSize = 255,  ///< Maximum size of Thread Network Data in bytes.
     };
@@ -348,7 +348,7 @@ protected:
     uint8_t mLength;          ///< The number of valid bytes in @var mTlvs.
 
 private:
-    enum
+    enum : int32_t 
     {
         kDataResubmitDelay = 300000,  ///< DATA_RESUBMIT_DELAY (miliseconds)
     };

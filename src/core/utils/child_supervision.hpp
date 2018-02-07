@@ -149,7 +149,7 @@ public:
     void UpdateOnSend(Child &aChild);
 
 private:
-    enum
+    enum : int16_t 
     {
         kDefaultSupervisionInterval = OPENTHREAD_CONFIG_CHILD_SUPERVISION_INTERVAL,  // (seconds)
         kOneSecond = 1000,                                                           // One second interval (in ms).
@@ -242,7 +242,7 @@ public:
     void UpdateOnReceive(const Mac::Address &aSource, bool aIsSeucre);
 
 private:
-    enum
+    enum : int16_t 
     {
         kDefaultTimeout = OPENTHREAD_CONFIG_SUPERVISION_CHECK_TIMEOUT,   // (seconds)
     };

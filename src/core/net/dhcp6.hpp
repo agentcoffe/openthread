@@ -58,7 +58,7 @@ namespace Dhcp6 {
  * DHCPv6 constant
  *
  */
-enum
+enum : int16_t 
 {
     kDhcpClientPort = 546,
     kDhcpServerPort = 547,
@@ -71,7 +71,7 @@ enum
  * DHCPv6 Message Types
  *
  */
-typedef enum Type
+typedef enum Type : uint8_t 
 {
     kTypeSolicit = 1,
     kTypeAdvertise = 2,
@@ -146,7 +146,7 @@ private:
  * DHCPv6 Option Codes
  *
  */
-typedef enum Code
+typedef enum Code : uint8_t 
 {
     kOptionClientIdentifier = 1,
     kOptionServerIdentifier = 2,
@@ -227,7 +227,7 @@ private:
  * Duid Type
  *
  */
-typedef enum DuidType
+typedef enum DuidType : uint8_t 
 {
     kDuidLLT = 1,
     kDuidEN = 2,
@@ -524,7 +524,7 @@ private:
  * Status Code
  *
  */
-typedef enum Status
+typedef enum Status : uint8_t 
 {
     kStatusSuccess = 0,
     kStatusUnspecFail = 1,

@@ -47,7 +47,7 @@ class Dataset
     friend class DatasetLocal;
 
 public:
-    enum
+    enum : int16_t 
     {
         kMaxSize = 256,      ///< Maximum size of MeshCoP Dataset (bytes)
         kMaxValueSize = 16,  /// < Maximum size of each Dataset TLV value (bytes)

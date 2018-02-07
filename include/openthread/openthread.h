@@ -155,9 +155,9 @@ extern "C" {
 OTAPI const char *OTCALL otGetVersionString(void);
 
 /**
- * This function converts an otError enum into a string.
+ * This function converts an otError enum  into a string. : int64_t 
  *
- * @param[in]  aError     An otError enum.
+ * @param[in]  aError     An otError enum . : int64_t 
  *
  * @returns  A string representation of an otError.
  *

@@ -58,7 +58,7 @@ public:
      * level FIFO order is preserved.
      *
      */
-    enum Priority
+    enum Priority : uint8_t 
     {
         kPriorityLow  = 0,              //< Indicates low/normal priority for a frame.
         kPriorityHigh = 1,              //< Indicates high priority for a frame.
@@ -541,7 +541,7 @@ private:
      *
      */
 
-    enum
+    enum : uint16_t 
     {
         kReadByteAfterFrameHasEnded        = 0,          // Value returned by ReadByte() when frame has ended.
         kMessageReadBufferSize             = 16,         // Size of message buffer array `mMessageBuffer`.
@@ -556,7 +556,7 @@ private:
         kNumPrios                          = (kPriorityHigh + 1), // Number of priorities.
     };
 
-    enum ReadState
+    enum ReadState : uint8_t 
     {
         kReadStateNotActive,                             // No current prepared output frame.
         kReadStateInSegment,                             // In middle of a data segment while reading current frame.
@@ -564,7 +564,7 @@ private:
         kReadStateDone,                                  // Current output frame is read fully.
     };
 
-    enum Direction
+    enum Direction : uint8_t 
     {
         kForward                           = kPriorityLow,
         kBackward                          = kPriorityHigh,

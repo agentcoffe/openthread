@@ -92,7 +92,7 @@ public:
     otError Stop(void);
 
 private:
-    enum
+    enum : int16_t 
     {
         kConfigExtAddressDelay = 100,  ///< milliseconds
         kTimeout               = 4000, ///< milliseconds
@@ -123,7 +123,7 @@ private:
 
     static Joiner &GetOwner(const Context &aContext);
 
-    enum State
+    enum State : uint8_t 
     {
         kStateIdle      = 0,
         kStateDiscover  = 1,

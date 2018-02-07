@@ -67,7 +67,7 @@ public :
      * Hardware types.
      *
      */
-    enum HardwareType
+    enum HardwareType : uint8_t 
     {
         kEui64 = 27,
     };

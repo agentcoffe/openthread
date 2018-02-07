@@ -60,7 +60,7 @@ public:
     /**
      * Represents the modes of operation for the TrickleTimer
      */
-    typedef enum Mode
+    typedef enum Mode : uint8_t 
     {
         kModeNormal     = 0,  ///< Runs the normal trickle logic.
         kModePlainTimer = 1,  ///< Runs a normal timer between Imin and Imax.
@@ -154,7 +154,7 @@ private:
     // Shadow base class method to ensure it is hidden.
     void StartAt(void) { }
 
-    typedef enum Phase
+    typedef enum Phase : uint8_t 
     {
         ///< Indicates we are currently not running
         kPhaseDormant    = 1,

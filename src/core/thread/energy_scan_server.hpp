@@ -65,7 +65,7 @@ public:
     EnergyScanServer(ThreadNetif &aThreadNetif);
 
 private:
-    enum
+    enum : int16_t 
     {
         kScanDelay   = 1000,  ///< SCAN_DELAY (milliseconds)
         kReportDelay = 500,   ///< Delay before sending a report (milliseconds)

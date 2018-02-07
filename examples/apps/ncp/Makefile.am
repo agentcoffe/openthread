@@ -143,6 +143,16 @@ LDFLAGS_COMMON                                                        += \
     $(NULL)
 endif # OPENTHREAD_EXAMPLES_KW41Z
 
+if OPENTHREAD_EXAMPLES_Z1
+LDADD_COMMON                                                          += \
+    $(top_builddir)/examples/platforms/z1/libopenthread-z1.a             \
+    $(NULL)
+
+LDFLAGS_COMMON                                                        += \
+    -T $(top_srcdir)/examples/platforms/z1/msp430f2617.ld                \
+    $(NULL)
+endif # OPENTHREAD_EXAMPLES_Z1
+
 if OPENTHREAD_ENABLE_NCP_FTD
 bin_PROGRAMS                                                          += \
     ot-ncp-ftd                                                           \

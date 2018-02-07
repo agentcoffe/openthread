@@ -43,6 +43,10 @@
 
 #if !OPENTHREAD_ENABLE_MULTIPLE_INSTANCES
 
+extern "C" {
+    int mbedtls_platform_set_calloc_free(void * (*calloc_func)(size_t, size_t), void (*free_func)(void *));
+}
+
 namespace ot {
 namespace Crypto {
 

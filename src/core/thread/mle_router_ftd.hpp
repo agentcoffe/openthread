@@ -697,7 +697,7 @@ public:
     otError GetMaxChildTimeout(uint32_t &aTimeout) const;
 
 private:
-    enum
+    enum : int16_t 
     {
         kDiscoveryMaxJitter = 250u,  ///< Maximum jitter time used to delay Discovery Responses in milliseconds.
         kStateUpdatePeriod = 1000u,  ///< State update period in milliseconds.

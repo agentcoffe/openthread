@@ -67,7 +67,7 @@ namespace Dhcp6 {
  * Some constants
  *
  */
-enum
+enum : uint8_t 
 {
     kTrickleTimerImin = 1,
     kTrickleTimerImax = 120,
@@ -86,7 +86,7 @@ public:
      * Status of IdentityAssociation
      *
      */
-    typedef enum Status
+    typedef enum Status : uint8_t 
     {
         kStatusInvalid,
         kStatusSolicit,

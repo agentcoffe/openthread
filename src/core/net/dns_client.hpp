@@ -205,7 +205,7 @@ private:
      * Retransmission parameters.
      *
      */
-    enum
+    enum : int16_t 
     {
         kResponseTimeout = OPENTHREAD_CONFIG_DNS_RESPONSE_TIMEOUT,
         kMaxRetransmit   = OPENTHREAD_CONFIG_DNS_MAX_RETRANSMIT,
@@ -214,7 +214,7 @@ private:
     /**
      * Special DNS symbols.
      */
-    enum
+    enum : int16_t 
     {
         kLabelTerminator       = 0,
         kLabelSeparator        = '.',
@@ -224,7 +224,7 @@ private:
     /**
      * Operating on message buffers.
      */
-    enum
+    enum : uint8_t 
     {
         kBufSize = 16
     };

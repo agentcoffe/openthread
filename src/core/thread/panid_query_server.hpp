@@ -65,7 +65,7 @@ public:
     PanIdQueryServer(ThreadNetif &aThreadNetif);
 
 private:
-    enum
+    enum : int16_t 
     {
         kScanDelay = 1000,  ///< SCAN_DELAY (milliseconds)
     };

@@ -232,8 +232,8 @@ AC_PATH_PROG(CMP, cmp)
 #   -Wall                        CC, CXX
 #
 
-PROSPECTIVE_CFLAGS="-Wall -Wextra -Wshadow -Werror -std=c99 -pedantic-errors"
-PROSPECTIVE_CXXFLAGS="-Wall -Wextra -Wshadow -Werror -std=gnu++98 -Wno-c++14-compat"
+PROSPECTIVE_CFLAGS="-Wall -Wextra -Wshadow -Werror -std=c99 -pedantic-errors -fpermissive"
+PROSPECTIVE_CXXFLAGS="-Wall -Wextra -Wshadow -Werror -std=gnu++98 -Wno-c++14-compat -fpermissive"
 
 AC_CACHE_CHECK([whether $CC is Clang],
     [nl_cv_clang],
@@ -1131,11 +1131,11 @@ AM_CONDITIONAL([OPENTHREAD_ENABLE_LINKER_MAP], [test "${enable_linker_map}" = "y
 
 AC_ARG_WITH(examples,
     [AS_HELP_STRING([--with-examples=TARGET],
-        [Specify the examples from one of: none, posix, cc2538, cc2650, da15000, efr32, emsk, gp712, kw41z, nrf52840 @<:@default=none@:>@.])],
+        [Specify the examples from one of: none, posix, cc2538, cc2650, da15000, efr32, emsk, gp712, kw41z, nrf52840, z1 @<:@default=none@:>@.])],
     [
         case "${with_examples}" in
 
-        none|posix|cc2538|cc2650|da15000|efr32|emsk|gp712|kw41z|nrf52840)
+        none|posix|cc2538|cc2650|da15000|efr32|emsk|gp712|kw41z|nrf52840|z1)
             ;;
         *)
             AC_MSG_ERROR([Invalid value ${with_examples} for --with-examples])
@@ -1192,6 +1192,11 @@ case ${with_examples} in
         OPENTHREAD_EXAMPLES_NRF52840=1
         AC_DEFINE_UNQUOTED([OPENTHREAD_EXAMPLES_NRF52840],[${OPENTHREAD_EXAMPLES_NRF52840}],[Define to 1 if you want to use nrf52840 examples])
         ;;
+
+    z1)
+        OPENTHREAD_EXAMPLES_Z1=1
+        AC_DEFINE_UNQUOTED([OPENTHREAD_EXAMPLES_Z1],[${OPENTHREAD_EXAMPLES_Z1}],[Define to 1 if you want to use z1 examples])
+        ;;
 esac
 
 AC_MSG_CHECKING([whether to enable examples])
@@ -1227,6 +1232,9 @@ AM_CONDITIONAL([OPENTHREAD_EXAMPLES_KW41Z], [test "${OPENTHREAD_EXAMPLES}" = "kw
 
 AC_SUBST(OPENTHREAD_EXAMPLES_NRF52840)
 AM_CONDITIONAL([OPENTHREAD_EXAMPLES_NRF52840], [test "${OPENTHREAD_EXAMPLES}" = "nrf52840"])
+
+AC_SUBST(OPENTHREAD_EXAMPLES_Z1)
+AM_CONDITIONAL([OPENTHREAD_EXAMPLES_Z1], [test "${OPENTHREAD_EXAMPLES}" = "z1"])
 
 #
 # Platform Information
@@ -1392,6 +1400,7 @@ examples/platforms/emsk/Makefile
 examples/platforms/gp712/Makefile
 examples/platforms/kw41z/Makefile
 examples/platforms/nrf52840/Makefile
+examples/platforms/z1/Makefile
 examples/platforms/posix/Makefile
 examples/platforms/utils/Makefile
 tools/Makefile

@@ -56,7 +56,7 @@ public:
      * Neighbor link states.
      *
      */
-    enum State
+    enum State : uint8_t 
     {
         kStateInvalid,                   ///< Neighbor link is invalid
         kStateRestored,                  ///< Neighbor is restored from non-volatile memory
@@ -357,7 +357,7 @@ private:
 class Child : public Neighbor
 {
 public:
-    enum
+    enum : uint8_t 
     {
         kMaxIp6AddressPerChild = OPENTHREAD_CONFIG_IP_ADDRS_PER_CHILD,
         kMaxRequestTlvs        = 5,

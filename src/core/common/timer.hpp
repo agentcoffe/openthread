@@ -70,7 +70,7 @@ class Timer: public InstanceLocator, public Context
 
 public:
 
-    enum
+    enum : uint32_t 
     {
         kMaxDt = (1UL << 31) - 1,  //< Maximum permitted value for parameter `aDt` in `Start` and `StartAt` method.
     };

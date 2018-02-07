@@ -62,7 +62,7 @@ namespace Settings {
  */
 
 /**
- * This enumeration defines the keys of settings
+ * This enum eration defines the keys of settings
  *
  */
 enum

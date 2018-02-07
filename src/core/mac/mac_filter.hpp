@@ -61,7 +61,7 @@ class Filter
 public:
     typedef otMacFilterEntry Entry;
 
-    enum
+    enum : uint8_t 
     {
         kMaxEntries = OPENTHREAD_CONFIG_MAC_FILTER_SIZE,
     };

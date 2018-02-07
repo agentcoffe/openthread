@@ -88,7 +88,7 @@ namespace Ip6 {
 /**
  * Internet Protocol Numbers
  */
-enum IpProto
+enum IpProto : uint8_t 
 {
     kProtoHopOpts  = 0,   ///< IPv6 Hop-by-Hop Option
     kProtoTcp      = 6,   ///< Transmission Control Protocol
@@ -101,7 +101,7 @@ enum IpProto
     kProtoDstOpts  = 60,  ///< Destination Options for IPv6
 };
 
-enum
+enum : uint8_t 
 {
     kVersionClassFlowSize = 4,  ///< Combined size of Version, Class, Flow Label in bytes.
 };
@@ -268,7 +268,7 @@ public:
     static uint8_t GetDestinationOffset(void) { return offsetof(HeaderPoD, mDestination); }
 
 private:
-    enum
+    enum : uint8_t 
     {
         kVersion6 = 0x60,
         kVersionMask = 0xf0,
@@ -365,7 +365,7 @@ public:
      * IPv6 Option Type actions for unrecognized IPv6 Options.
      *
      */
-    enum Action
+    enum Action : uint8_t 
     {
         kActionSkip      = 0x00,  ///< skip over this option and continue processing the header
         kActionDiscard   = 0x40,  ///< discard the packet
@@ -411,7 +411,7 @@ OT_TOOL_PACKED_BEGIN
 class OptionPadN : public OptionHeader
 {
 public:
-    enum
+    enum : uint8_t 
     {
         kType = 0x01,      ///< PadN type
         kData = 0x00,      ///< PadN specific data
@@ -453,7 +453,7 @@ OT_TOOL_PACKED_BEGIN
 class OptionPad1
 {
 public:
-    enum
+    enum : uint8_t 
     {
         kType = 0x00
     };
@@ -542,7 +542,7 @@ private:
     uint8_t mNextHeader;
     uint8_t mReserved;
 
-    enum
+    enum : uint16_t 
     {
         kOffsetOffset = 3,
         kOffsetMask = 0xfff8,

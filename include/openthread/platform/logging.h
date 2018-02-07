@@ -63,7 +63,7 @@ extern "C" {
 typedef uint8_t otLogLevel;
 
 /**
- * This enum represents log regions.
+ * This enum  represents log regions. : int64_t 
  *
  */
 typedef enum otLogRegion

@@ -155,7 +155,7 @@ public:
     }
 
 private:
-    enum
+    enum : uint16_t 
     {
         kGuardBlockSize = 0xffff, ///< Size value of the guard block.
     };
@@ -233,7 +233,7 @@ public:
     }
 
 private:
-    enum
+    enum : int32_t 
     {
 #if OPENTHREAD_ENABLE_DTLS
         kMemorySize = OPENTHREAD_CONFIG_MBEDTLS_HEAP_SIZE,          ///< Size of memory buffer (bytes).

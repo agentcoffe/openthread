@@ -67,7 +67,7 @@ namespace Mac {
  * Protocol parameters and constants.
  *
  */
-enum
+enum : uint32_t 
 {
     kMinBE                = 3,                     ///< macMinBE (IEEE 802.15.4-2006)
     kMaxBE                = 5,                     ///< macMaxBE (IEEE 802.15.4-2006)
@@ -648,14 +648,14 @@ public:
     bool RadioSupportsRetries(void);
 
 private:
-    enum ScanType
+    enum ScanType : int32_t 
     {
         kScanTypeNone = 0,
         kScanTypeActive,
         kScanTypeEnergy,
     };
 
-    enum
+    enum : uint8_t 
     {
         kInvalidRssiValue = 127
     };
@@ -710,7 +710,7 @@ private:
     Sender *mSendHead, *mSendTail;
     Receiver *mReceiveHead, *mReceiveTail;
 
-    enum
+    enum : int32_t 
     {
         kStateIdle = 0,
         kStateActiveScan,

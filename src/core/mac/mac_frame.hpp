@@ -140,7 +140,7 @@ public:
     void Set(const Ip6::Address &aIpAddress);
 
 private:
-    enum
+    enum : uint8_t 
     {
         kGroupFlag = 1 << 0,
         kLocalFlag = 1 << 1,
@@ -153,7 +153,7 @@ private:
  */
 struct Address
 {
-    enum
+    enum : uint8_t 
     {
         kAddressStringSize = 18,     ///< Max chars needed for a string representation of address (@sa ToString()).
     };
@@ -822,7 +822,7 @@ OT_TOOL_PACKED_BEGIN
 class BeaconPayload
 {
 public:
-    enum
+    enum : uint8_t 
     {
         kProtocolId       = 3,                      ///< Thread Protocol ID.
         kNetworkNameSize  = 16,                     ///< Size of Thread Network Name (bytes).
@@ -830,7 +830,7 @@ public:
         kInfoStringSize   = 92,                     ///< Max chars for the info string (@sa ToInfoString()).
     };
 
-    enum
+    enum : uint8_t 
     {
         kProtocolVersion  = 2,                      ///< Thread Protocol version.
         kVersionOffset    = 4,                      ///< Version field bit offset.

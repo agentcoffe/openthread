@@ -62,7 +62,7 @@ OT_TOOL_PACKED_BEGIN
 class OptionMpl: public OptionHeader
 {
 public:
-    enum
+    enum : uint8_t 
     {
         kType = 0x6d,    /* 01 1 01101 */
         kMinLength = 2
@@ -90,7 +90,7 @@ public:
     /**
      * MPL Seed Id lengths.
      */
-    enum SeedIdLength
+    enum SeedIdLength : uint8_t 
     {
         kSeedIdLength0  = 0 << 6,  ///< 0-byte MPL Seed Id Length.
         kSeedIdLength2  = 1 << 6,  ///< 2-byte MPL Seed Id Length.
@@ -168,7 +168,7 @@ public:
     void SetSeedId(uint16_t aSeedId) { mSeedId = HostSwap16(aSeedId); }
 
 private:
-    enum
+    enum : uint8_t 
     {
         kSeedIdLengthMask = 3 << 6,
         kMaxFlag = 1 << 5
@@ -515,7 +515,7 @@ public:
     const MessageQueue &GetBufferedMessageSet(void) const { return mBufferedMessageSet; }
 
 private:
-    enum
+    enum : int16_t 
     {
         kNumSeedEntries = OPENTHREAD_CONFIG_MPL_SEED_SET_ENTRIES,
         kSeedEntryLifetime = OPENTHREAD_CONFIG_MPL_SEED_SET_ENTRY_LIFETIME,

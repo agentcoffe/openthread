@@ -53,10 +53,10 @@ extern "C" {
  */
 
 /**
- * This enumeration defines the Commissioner State.
+ * This enum eration defines the Commissioner State. : int64_t 
  *
  */
-typedef enum otCommissionerState
+typedef enum  otCommissionerState : int64_t 
 {
     OT_COMMISSIONER_STATE_DISABLED = 0, ///< Commissioner role is disabled.
     OT_COMMISSIONER_STATE_PETITION = 1, ///< Currently petitioning to become a Commissioner.

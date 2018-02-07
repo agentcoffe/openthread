@@ -172,7 +172,7 @@ private:
      */
     const uint8_t *GetData(void) const { return mBuffer.mData; }
 
-    enum
+    enum : int32_t 
     {
         kBufferDataSize = kBufferSize - sizeof(struct otMessage),
         kHeadBufferDataSize = kBufferDataSize - sizeof(struct MessageInfo),
@@ -1140,7 +1140,7 @@ public:
 #endif
 
 private:
-    enum
+    enum : uint8_t 
     {
         kDefaultMessagePriority = Message::kPriorityLow,
     };
@@ -1152,6 +1152,7 @@ private:
 
 #if OPENTHREAD_CONFIG_PLATFORM_MESSAGE_MANAGEMENT == 0
     uint16_t mNumFreeBuffers;
+    // 128 [32] = 4096
     Buffer   mBuffers[kNumBuffers];
     Buffer   *mFreeBuffers;
 #endif

@@ -35,7 +35,7 @@
  * To make spinel code more portable, all header file
  * `#include`s are defined in a platform specific header
  * file "spinel_platform.h" which is then included from
- * "spinel.h".
+ * "spinel.hpp".
  *
  * This file should include the following header files (or
  * their equivalent on the platform):

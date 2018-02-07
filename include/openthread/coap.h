@@ -62,7 +62,7 @@ extern "C" {
  * CoAP Type values.
  *
  */
-typedef enum otCoapType
+typedef enum  otCoapType : int64_t 
 {
     OT_COAP_TYPE_CONFIRMABLE     = 0x00,  ///< Confirmable
     OT_COAP_TYPE_NON_CONFIRMABLE = 0x10,  ///< Non-confirmable
@@ -80,7 +80,7 @@ typedef enum otCoapType
  * CoAP Code values.
  *
  */
-typedef enum otCoapCode
+typedef enum  otCoapCode : int64_t 
 {
     OT_COAP_CODE_EMPTY               = OT_COAP_CODE(0, 0),  ///< Empty message code
     OT_COAP_CODE_GET                 = OT_COAP_CODE(0, 1),  ///< Get
@@ -117,7 +117,7 @@ typedef enum otCoapCode
 /**
  * CoAP Option Numbers
  */
-typedef enum otCoapOptionType
+typedef enum  otCoapOptionType : int64_t 
 {
     OT_COAP_OPTION_IF_MATCH       = 1,    ///< If-Match
     OT_COAP_OPTION_URI_HOST       = 3,    ///< Uri-Host
@@ -152,7 +152,7 @@ typedef struct otCoapOption
  * CoAP Content Format codes.  The full list is documented at
  * https://tools.ietf.org/html/rfc7252#page-92
  */
-typedef enum otCoapOptionContentFormat
+typedef enum  otCoapOptionContentFormat : int64_t 
 {
     OT_COAP_OPTION_CONTENT_FORMAT_TEXT_PLAIN    = 0,    ///< text/plain
     OT_COAP_OPTION_CONTENT_FORMAT_LINK_FORMAT   = 40,   ///< application/link-format

@@ -98,7 +98,7 @@ public:
     void ReceiveTask(char *aBuf, uint16_t aBufLength);
 
 private:
-    enum
+    enum : uint8_t
     {
         kMaxLineLength = 128,
     };

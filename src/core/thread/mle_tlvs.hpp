@@ -78,7 +78,7 @@ public:
      * MLE TLV Types.
      *
      */
-    enum Type
+    enum Type : uint8_t 
     {
         kSourceAddress       = 0,    ///< Source Address TLV
         kMode                = 1,    ///< Mode TLV
@@ -225,7 +225,7 @@ public:
      */
     bool IsValid(void) const { return GetLength() == sizeof(*this) - sizeof(Tlv); }
 
-    enum
+    enum : uint8_t 
     {
         kModeRxOnWhenIdle      = 1 << 3,
         kModeSecureDataRequest = 1 << 2,
@@ -304,7 +304,7 @@ OT_TOOL_PACKED_BEGIN
 class ChallengeTlv: public Tlv
 {
 public:
-    enum
+    enum : uint8_t 
     {
         kMaxSize = 8,  ///< Maximum size in bytes (Thread Specification).
     };
@@ -352,7 +352,7 @@ OT_TOOL_PACKED_BEGIN
 class ResponseTlv: public Tlv
 {
 public:
-    enum
+    enum : uint8_t 
     {
         kMaxSize = 8,  ///< Maximum size in bytes (Thread Specification).
     };
@@ -590,7 +590,7 @@ public:
     }
 
 private:
-    enum
+    enum : int32_t 
     {
         kLinkQualityOutOffset = 6,
         kLinkQualityOutMask = 3 << kLinkQualityOutOffset,
@@ -903,7 +903,7 @@ public:
     void SetTlvs(const uint8_t *aTlvs) { memcpy(mTlvs, aTlvs, GetLength()); }
 
 private:
-    enum
+    enum : uint8_t 
     {
         kMaxTlvs = 8,
     };
@@ -933,7 +933,7 @@ public:
      */
     bool IsValid(void) const { return GetLength() == sizeof(*this) - sizeof(Tlv); }
 
-    enum
+    enum : uint8_t 
     {
         kRouterFlag = 1 << 7,
         kEndDeviceFlag = 1 << 6,
@@ -1164,7 +1164,7 @@ public:
     void SetSedDatagramCount(uint8_t aSedDatagramCount) { mSedDatagramCount = aSedDatagramCount; }
 
 private:
-    enum
+    enum : uint32_t 
     {
         kParentPriorityOffset = 6,
         kParentPriorityMask = 3 << kParentPriorityOffset,
@@ -1250,7 +1250,7 @@ public:
     /**
      * Status values.
      */
-    enum Status
+    enum Status : uint8_t 
     {
         kError = 1,   ///< Error.
     };
@@ -1399,7 +1399,7 @@ public:
     void SetIp6Address(const Ip6::Address &aAddress) { mIp6Address = aAddress; }
 
 private:
-    enum
+    enum : uint8_t 
     {
         kCompressed = 1 << 7,
         kCidMask = 0xf,

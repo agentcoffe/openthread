@@ -55,7 +55,7 @@ namespace Crypto {
 class Sha256
 {
 public:
-    enum
+    enum : uint8_t 
     {
         kHashSize = 32,  ///< SHA-256 hash size (bytes)
     };

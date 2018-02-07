@@ -54,7 +54,7 @@ namespace Hdlc {
  */
 static uint16_t UpdateFcs(uint16_t aFcs, uint8_t aByte);
 
-enum
+enum  : int64_t 
 {
     kFlagXOn        = 0x11,
     kFlagXOff       = 0x13,
@@ -67,7 +67,7 @@ enum
  * FCS lookup table
  *
  */
-enum
+enum  : int64_t 
 {
     kInitFcs = 0xffff,  ///< Initial FCS value.
     kGoodFcs = 0xf0b8,  ///< Good FCS value.

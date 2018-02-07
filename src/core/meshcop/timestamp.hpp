@@ -140,7 +140,7 @@ public:
 private:
     uint8_t mSeconds[6];
 
-    enum
+    enum : int16_t 
     {
         kTicksOffset         = 1,
         kTicksMask           = 0x7fff << kTicksOffset,

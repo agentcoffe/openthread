@@ -415,64 +415,97 @@ public:
 private:
     static otError TmfFilter(const Message &aMessage, const Ip6::MessageInfo &aMessageInfo, void *aContext);
 
+    //template<int s> struct warn;
+    //warn<sizeof(NetworkDiagnostic::NetworkDiagnostic)> w;
+
+    // 114
     Coap::Coap mCoap;
 #if OPENTHREAD_ENABLE_DHCP6_CLIENT
+#error "1"
     Dhcp6::Dhcp6Client mDhcp6Client;
 #endif  // OPENTHREAD_ENABLE_DHCP6_CLIENT
 #if OPENTHREAD_ENABLE_DHCP6_SERVER
+#error "2"
     Dhcp6::Dhcp6Server mDhcp6Server;
 #endif  // OPENTHREAD_ENABLE_DHCP6_SERVER
 #if OPENTHREAD_ENABLE_DNS_CLIENT
+#error "3"
     Dns::Client mDnsClient;
 #endif  // OPENTHREAD_ENABLE_DNS_CLIENT
+    // 334
     MeshCoP::ActiveDataset mActiveDataset;
+    // 346
     MeshCoP::PendingDataset mPendingDataset;
+    // 4
     Ip6::Filter mIp6Filter;
+    // 164
     KeyManager mKeyManager;
+    // 1
     Lowpan::Lowpan mLowpan;
+    // 276
     Mac::Mac mMac;
+    // 180
     MeshForwarder mMeshForwarder;
+    // 3918
     Mle::MleRouter mMleRouter;
 #if OPENTHREAD_ENABLE_BORDER_ROUTER
+#error "4"
     NetworkData::Local mNetworkDataLocal;
 #endif  // OPENTHREAD_ENABLE_BORDER_ROUTER
+    // 390
     NetworkData::Leader mNetworkDataLeader;
 #if OPENTHREAD_FTD || OPENTHREAD_ENABLE_MTD_NETWORK_DIAGNOSTIC
+//#error "5"
+    // 72
     NetworkDiagnostic::NetworkDiagnostic mNetworkDiagnostic;
 #endif // OPENTHREAD_FTD || OPENTHREAD_ENABLE_MTD_NETWORK_DIAGNOSTIC
     bool mIsUp;
 
 #if OPENTHREAD_ENABLE_COMMISSIONER && OPENTHREAD_FTD
+#error "6"
     MeshCoP::Commissioner mCommissioner;
 #endif  // OPENTHREAD_ENABLE_COMMISSIONER
 
 #if OPENTHREAD_ENABLE_DTLS
+#error "7"
     MeshCoP::Dtls mDtls;
     Coap::CoapSecure mCoapSecure;
 #endif// OPENTHREAD_ENABLE_DTLS
 
 #if OPENTHREAD_ENABLE_JOINER
+#error "8"
     MeshCoP::Joiner mJoiner;
 #endif  // OPENTHREAD_ENABLE_JOINER
 
 #if OPENTHREAD_ENABLE_JAM_DETECTION
+#error "9"
     Utils::JamDetector mJamDetector;
 #endif // OPENTHREAD_ENABLE_JAM_DETECTION
 
 #if OPENTHREAD_ENABLE_TMF_PROXY && OPENTHREAD_FTD
+#error "10"
     TmfProxy mTmfProxy;
 #endif // OPENTHREAD_ENABLE_TMF_PROXY && OPENTHREAD_FTD
 
 #if OPENTHREAD_FTD
+//#error "11"
+    // 104
     MeshCoP::JoinerRouter mJoinerRouter;
+    // 116
     MeshCoP::Leader mLeader;
+    // 512
     AddressResolver mAddressResolver;
 #endif  // OPENTHREAD_FTD
 
+    // 1
     Utils::ChildSupervisor mChildSupervisor;
+    // 1
     Utils::SupervisionListener mSupervisionListener;
+    // 36
     AnnounceBeginServer mAnnounceBegin;
+    // 50
     PanIdQueryServer mPanIdQuery;
+    // 136
     EnergyScanServer mEnergyScan;
 };
 

@@ -203,7 +203,7 @@ public:
     void Decode(const uint8_t *aInBuf, uint16_t aInLength);
 
 private:
-    enum State
+    enum State : uint8_t 
     {
         kStateNoSync = 0,
         kStateSync,

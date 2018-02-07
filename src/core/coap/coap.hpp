@@ -62,7 +62,7 @@ namespace Coap {
  * Protocol Constants (RFC 7252).
  *
  */
-enum
+enum : uint32_t 
 {
     kAckTimeout                 = OPENTHREAD_CONFIG_COAP_ACK_TIMEOUT,
     kAckRandomFactorNumerator   = OPENTHREAD_CONFIG_COAP_ACK_RANDOM_FACTOR_NUMERATOR,
@@ -200,7 +200,7 @@ class Resource : public otCoapResource
     friend class Coap;
 
 public:
-    enum
+    enum : uint8_t 
     {
         kMaxReceivedUriPath = 32,   ///< Maximum supported URI path on received messages.
     };
@@ -402,7 +402,7 @@ public:
     const MessageQueue &GetResponses(void) const { return mQueue; }
 
 private:
-    enum
+    enum : uint8_t 
     {
         kMaxCachedResponses = OPENTHREAD_CONFIG_COAP_SERVER_MAX_CACHED_RESPONSES,
     };
@@ -667,7 +667,7 @@ protected:
     Ip6::UdpSocket mSocket;
 
 private:
-    enum
+    enum : uint8_t 
     {
         kDefaultCoapMessagePriority = Message::kPriorityLow,
     };

@@ -35,6 +35,11 @@
 #ifndef OPENTHREAD_CONFIG_H_
 #define OPENTHREAD_CONFIG_H_
 
+#define printf(...)
+#define fprintf(...)
+#define snprintf(...)
+#define vsnprintf(...)
+
 /**
  * @def OPENTHREAD_CONFIG_FILE
  *

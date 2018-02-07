@@ -259,6 +259,7 @@ const char *otLogRegionToString(otLogRegion aRegion)
 }
 #endif // OPENTHREAD_CONFIG_LOG_PREPEND_REGION
 
+#if OPENTHREAD_CONFIG_LOG_ERROR_STRING == 1
 const char *otThreadErrorToString(otError aError)
 {
     const char *retval;
@@ -412,6 +413,12 @@ const char *otThreadErrorToString(otError aError)
 
     return retval;
 }
+#else
+const char *otThreadErrorToString(otError aError)
+{
+    return "Err";
+}
+#endif //OPENTHREAD_CONFIG_LOG_ERROR_STRING
 
 #ifdef __cplusplus
 };

@@ -47,7 +47,7 @@ using ot::Encoding::BigEndian::HostSwap32;
 
 namespace ot {
 
-enum
+enum : uint16_t 
 {
     kCoapUdpPort = 61631,
 };
@@ -64,7 +64,7 @@ public:
      * Network Layer TLV Types.
      *
      */
-    enum Type
+    enum Type : uint8_t 
     {
         kTarget              = 0,  ///< Target EID TLV
         kExtMacAddress       = 1,  ///< Extended MAC Address TLV
@@ -321,7 +321,7 @@ public:
      * Status values.
      *
      */
-    enum Status
+    enum Status : uint8_t 
     {
         kSuccess            = 0,  ///< Success.
         kNoAddressAvailable = 1,  ///< No address available.
@@ -495,7 +495,7 @@ public:
     uint8_t *GetTlvs(void) { return mTlvs; }
 
 private:
-    enum
+    enum : uint8_t 
     {
         kMaxSize = 255,
     };

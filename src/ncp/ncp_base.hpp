@@ -41,7 +41,7 @@
 #include <openthread/types.h>
 
 #include "openthread-core-config.h"
-#include "spinel.h"
+#include "spinel.hpp"
 #include "common/tasklet.hpp"
 #include "ncp/ncp_buffer.hpp"
 

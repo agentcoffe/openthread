@@ -58,7 +58,7 @@ namespace MeshCoP {
 class Dtls: public ThreadNetifLocator
 {
 public:
-    enum
+    enum : uint8_t
     {
         kPskMaxLength = 32,
         kApplicationDataMaxLength = 128,

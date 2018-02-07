@@ -1,0 +1,34 @@
+/^\.#PATTERN/!b end
+
+:loop
+/^ \.#PATTERN\.[0-9a-zA-Z\_]*$/ {
+	s/\./ /g
+	N
+	s/\n//
+	p
+	b continue
+}
+
+/^ \.#PATTERN\.[0-9a-zA-Z\_]* *0x[0-9a-f]* *0x[0-9a-f]*/ {
+	s/\./ /g
+	p
+	b continue
+}
+
+/^ \.#PATTERN *0x[0-9a-f]* *0x[0-9a-f]*/ {
+	s/\.#PATTERN/ #PATTERN @none@/
+	p
+	b continue
+}
+
+/^ \*fill\*/ {
+	s/\*fill\*/ *fill* @none@/
+	p
+	b continue
+}
+
+:continue
+n
+/^\.[^\.]/b end
+b loop
+:end

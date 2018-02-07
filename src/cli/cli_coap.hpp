@@ -68,7 +68,7 @@ public:
     otError Process(int argc, char *argv[]);
 
 private:
-    enum
+    enum : uint8_t 
     {
         kMaxUriLength = 32,
         kMaxBufferSize = 16

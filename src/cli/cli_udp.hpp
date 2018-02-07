@@ -89,7 +89,7 @@ public:
     virtual int OutputFormat(const char *fmt, ...);
 
 private:
-    enum
+    enum : uint8_t 
     {
         kMaxLineLength = 128,
     };

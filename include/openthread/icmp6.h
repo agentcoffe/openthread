@@ -56,7 +56,7 @@ extern "C" {
  * ICMPv6 Message Types
  *
  */
-typedef enum otIcmp6Type
+typedef enum  otIcmp6Type : int64_t 
 {
     OT_ICMP6_TYPE_DST_UNREACH  = 1,     ///< Destination Unreachable
     OT_ICMP6_TYPE_ECHO_REQUEST = 128,   ///< Echo Request
@@ -67,7 +67,7 @@ typedef enum otIcmp6Type
  * ICMPv6 Message Codes
  *
  */
-typedef enum otIcmp6Code
+typedef enum  otIcmp6Code : int64_t 
 {
     OT_ICMP6_CODE_DST_UNREACH_NO_ROUTE = 0,  ///< Destination Unreachable No Route
 } otIcmp6Code;

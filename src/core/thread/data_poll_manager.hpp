@@ -61,7 +61,7 @@ namespace ot {
 class DataPollManager: public MeshForwarderLocator
 {
 public:
-    enum
+    enum : uint8_t 
     {
         kDefaultFastPolls   = 8,  ///< Default number of fast poll transmissions (@sa StartFastPolls).
         kMaxFastPolls       = 15, ///< Maximum number of fast poll transmissions allowed.
@@ -194,7 +194,7 @@ public:
     uint32_t GetKeepAlivePollPeriod(void) const;
 
 private:
-    enum  // Poll period under different conditions (in milliseconds).
+    enum   // Poll period under different conditions (in milliseconds).
     {
         kAttachDataPollPeriod   = OPENTHREAD_CONFIG_ATTACH_DATA_POLL_PERIOD,  ///< Poll period during attach.
         kRetxPollPeriod         = 1000,                                       ///< Poll retx period due to tx failure.
@@ -203,13 +203,13 @@ private:
         kMinPollPeriod          = 10,                                         ///< Minimum allowed poll period.
     };
 
-    enum
+    enum : uint8_t 
     {
         kQuickPollsAfterTimeout = 5,  ///< Maximum number of quick data poll tx in case of back-to-back poll timeouts.
         kMaxPollRetxAttempts    = 5,  ///< Maximum number of retransmit attempts of data poll (mac data request).
     };
 
-    enum PollPeriodSelector
+    enum PollPeriodSelector : uint8_t 
     {
         kUsePreviousPollPeriod,
         kRecalculatePollPeriod,

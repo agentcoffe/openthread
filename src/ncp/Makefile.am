@@ -65,8 +65,8 @@ COMMON_SOURCES                                    = \
     ncp_base.hpp                                    \
     ncp_buffer.cpp                                  \
     ncp_buffer.hpp                                  \
-    spinel.c                                        \
-    spinel.h                                        \
+    spinel.cpp                                      \
+    spinel.hpp                                      \
     spinel_platform.h                               \
     ncp_spi.cpp                                     \
     ncp_spi.hpp                                     \
@@ -90,7 +90,7 @@ include_HEADERS                                   = \
 if OPENTHREAD_BUILD_TESTS
 
 noinst_PROGRAMS                                   = spinel-test
-spinel_test_SOURCES                               = spinel.c
+spinel_test_SOURCES                               = spinel.cpp
 spinel_test_CFLAGS                                = \
     $(COMMON_CPPFLAGS)                              \
     -DSPINEL_SELF_TEST=1                            \

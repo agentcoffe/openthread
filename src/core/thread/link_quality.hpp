@@ -60,7 +60,7 @@ class RssAverager
     friend class LinkQualityInfo;
 
 public:
-    enum
+    enum : uint8_t 
     {
         kStringSize = 10,    ///< Max chars needed for a string representation of average (@sa ToString()).
     };
@@ -137,7 +137,7 @@ private:
      *
      */
 
-    enum
+    enum : int32_t 
     {
         kPrecisionBitShift      = 3,    // Precision multiple for RSS average (1 << PrecisionBitShift).
         kPrecision              = (1 << kPrecisionBitShift),
@@ -162,7 +162,7 @@ class LinkQualityInfo
 {
 
 public:
-    enum
+    enum : uint8_t 
     {
         kInfoStringSize = 50,    ///< Max chars needed for the info string representation (@sa ToInfoString())
     };
@@ -298,7 +298,7 @@ public:
     static int8_t ConvertLinkQualityToRss(int8_t aNoiseFloor, uint8_t aLinkQuality);
 
 private:
-    enum
+    enum : uint8_t 
     {
         // Constants for obtaining link quality from link margin:
 

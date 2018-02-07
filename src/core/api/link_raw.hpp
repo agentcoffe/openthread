@@ -123,7 +123,7 @@ private:
 
 #if OPENTHREAD_LINKRAW_TIMER_REQUIRED
 
-    enum TimerReason
+    enum TimerReason : int32_t 
     {
         kTimerReasonNone,
         kTimerReasonAckTimeout,
@@ -153,7 +153,7 @@ private:
 
 #if OPENTHREAD_CONFIG_ENABLE_SOFTWARE_ENERGY_SCAN
 
-    enum
+    enum : uint32_t 
     {
         kInvalidRssiValue = 127
     };

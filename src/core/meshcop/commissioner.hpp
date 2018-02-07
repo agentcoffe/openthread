@@ -200,7 +200,7 @@ public:
     PanIdQueryClient mPanIdQuery;
 
 private:
-    enum
+    enum : uint8_t 
     {
         kPetitionAttemptDelay = 5,      ///< COMM_PET_ATTEMPT_DELAY (seconds)
         kPetitionRetryCount   = 2,      ///< COMM_PET_RETRY_COUNT

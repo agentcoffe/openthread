@@ -51,7 +51,7 @@ public:
     NcpSpi(otInstance *aInstance);
 
 private:
-    enum
+    enum : uint8_t 
     {
         /**
          * SPI tx and rx buffer size (should fit a max length frame + SPI header).
@@ -66,7 +66,7 @@ private:
         kSpiHeaderLength = 5,
     };
 
-    enum TxState
+    enum TxState : uint8_t 
     {
         kTxStateIdle,               // No frame to send.
         kTxStateSending,            // A frame is ready to be sent.

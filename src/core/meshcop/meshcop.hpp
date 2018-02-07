@@ -41,7 +41,7 @@
 namespace ot {
 namespace MeshCoP {
 
-enum
+enum : uint8_t 
 {
     kMeshCoPMessagePriority = Message::kPriorityHigh, // The priority for MeshCoP message
 };

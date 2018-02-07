@@ -113,7 +113,7 @@ public:
     otError Resolve(const Ip6::Address &aEid, Mac::ShortAddress &aRloc16);
 
 private:
-    enum
+    enum : int16_t 
     {
         kCacheEntries = OPENTHREAD_CONFIG_ADDRESS_CACHE_ENTRIES,
         kStateUpdatePeriod = 1000u,           ///< State update period in milliseconds.
@@ -123,7 +123,7 @@ private:
      * Thread Protocol Parameters and Constants
      *
      */
-    enum
+    enum : int16_t 
     {
         kAddressQueryTimeout = 3,             ///< ADDRESS_QUERY_TIMEOUT (seconds)
         kAddressQueryInitialRetryDelay = 15,  ///< ADDRESS_QUERY_INITIAL_RETRY_DELAY (seconds)
@@ -141,7 +141,7 @@ private:
         uint8_t           mFailures;
         uint8_t           mAge;
 
-        enum State
+        enum State : uint8_t 
         {
             kStateInvalid,
             kStateQuery,

@@ -250,7 +250,7 @@ public:
     otError UpdateChecksum(Message &aMessage, uint16_t aPseudoHeaderChecksum);
 
 private:
-    enum
+    enum  : uint16_t 
     {
         kDynamicPortMin = 49152,  ///< Service Name and Transport Protocol Port Number Registry
         kDynamicPortMax = 65535,  ///< Service Name and Transport Protocol Port Number Registry

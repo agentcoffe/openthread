@@ -596,6 +596,15 @@
 #endif  // OPENTHREAD_CONFIG_LOG_SUFFIX
 
 /**
+ * @def OPENTHREAD_CONFIG_LOG_ERROR_STRING
+ *
+ * A 0 Replaces all error strings with Err to save memory.
+ *
+ */
+#ifndef OPENTHREAD_CONFIG_LOG_ERROR_STRING
+#define OPENTHREAD_CONFIG_LOG_ERROR_STRING                      1
+#endif //OPENTHREAD_CONFIG_LOG_ERROR_STRING
+/**
  * @def OPENTHREAD_CONFIG_PLAT_LOG_FUNCTION
  *
  * Defines the name of function/macro used for logging inside OpenThread, by default is set to `otPlatLog()`.

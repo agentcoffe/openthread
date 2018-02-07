@@ -99,7 +99,7 @@ public:
      * Defines types of DNS message.
      *
      */
-    enum Type
+    enum Type : uint8_t 
     {
         kTypeQuery = 0,
         kTypeResponse = 1,
@@ -127,7 +127,7 @@ public:
      * Defines types of query.
      *
      */
-    enum QueryType
+    enum QueryType : uint8_t 
     {
         kQueryTypeStandard = 0,
         kQueryTypeInverse  = 1,
@@ -236,7 +236,7 @@ public:
      * Defines response codes.
      *
      */
-    enum Response
+    enum Response : uint8_t 
     {
         kResponseSuccess        = 0,
         kResponseFormatError    = 1,
@@ -338,7 +338,7 @@ private:
      * Protocol Constants (RFC 1035).
      *
      */
-    enum
+    enum : int32_t 
     {
         kQrFlagOffset = 7,                       ///< QR Flag offset.
         kQrFlagMask   = 0x01 << kQrFlagOffset,   ///< QR Flag mask.
@@ -450,7 +450,7 @@ OT_TOOL_PACKED_BEGIN
 class ResourceRecordAaaa: public ResourceRecord
 {
 public:
-    enum
+    enum : uint8_t 
     {
         kType   = 0x1C,  ///< AAAA Resource Record type.
         kClass  = 0x01,  ///< The value of the Internet class.
@@ -550,7 +550,7 @@ private:
 class QuestionAaaa: public Question
 {
 public:
-    enum
+    enum : uint8_t 
     {
         kType  = 0x1C,  ///< AAAA Resource Record type.
         kClass = 0x01,  ///< The value of the Internet class.

@@ -181,7 +181,7 @@ private:
     static JamDetector &GetOwner(const Context &aContext);
 
 private:
-    enum
+    enum : int16_t 
     {
         kMaxWindow              = 63,   // Max window size
         kDefaultRssiThreshold   = 0,

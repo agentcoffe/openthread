@@ -62,7 +62,7 @@ namespace NetworkDiagnostic {
  *
  */
 
-enum
+enum : uint8_t 
 {
     kNumResetTlvTypes = 1,
     kNumTlvTypes = 18,
@@ -80,7 +80,7 @@ public:
      * MLE TLV Types.
      *
      */
-    enum Type
+    enum Type : uint8_t 
     {
         kExtMacAddress       = 0,    ///< Source Address TLV
         kAddress16           = 1,    ///< Address16 TLV
@@ -258,7 +258,7 @@ public:
      */
     bool IsValid(void) const { return GetLength() == sizeof(*this) - sizeof(NetworkDiagnosticTlv); }
 
-    enum
+    enum : uint8_t 
     {
         kModeRxOnWhenIdle      = 1 << 3,
         kModeSecureDataRequest = 1 << 2,
@@ -502,7 +502,7 @@ public:
     void SetSedDatagramCount(uint8_t aSedDatagramCount) { mSedDatagramCount = aSedDatagramCount; }
 
 private:
-    enum
+    enum : int32_t 
     {
         kParentPriorityOffset = 6,
         kParentPriorityMask = 3 << kParentPriorityOffset,
@@ -674,7 +674,7 @@ public:
     }
 
 private:
-    enum
+    enum : int32_t 
     {
         kLinkQualityOutOffset = 6,
         kLinkQualityOutMask = 3 << kLinkQualityOutOffset,
@@ -850,7 +850,7 @@ OT_TOOL_PACKED_BEGIN
 class Ip6AddressListTlv: public NetworkDiagnosticTlv
 {
 public:
-    enum
+    enum : uint32_t 
     {
         kMaxSize = 8,  ///< Maximum size in bytes (Thread Specification).
     };
@@ -1243,7 +1243,7 @@ private:
      * Masks for fields.
      *
      */
-    enum
+    enum : uint16_t 
     {
         kTimeoutMask    = 0xf800,
         kTimeoutOffset  = 11,

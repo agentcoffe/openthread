@@ -7,9 +7,28 @@
  */
 
 
-#include <stdint.h>
+#include <openthread/config.h>
+#include <openthread/openthread.h>
+#include <openthread/platform/alarm-milli.h>
+#include <openthread/platform/diag.h>
+#include <openthread/platform/platform.h>
+#include <openthread/platform/radio.h>
 
-#include <openthread/types.h>
+#include "platform-z1.h"
+#include "common/logging.hpp"
+#include "utils/code_utils.h"
+
+enum
+{
+    IEEE802154_MIN_LENGTH = 5,
+    IEEE802154_MAX_LENGTH = 127,
+    IEEE802154_ACK_LENGTH = 5,
+    IEEE802154_FRAME_TYPE_MASK = 0x7,
+    IEEE802154_FRAME_TYPE_ACK = 0x2,
+    IEEE802154_FRAME_PENDING = 1 << 4,
+    IEEE802154_ACK_REQUEST = 1 << 5,
+    IEEE802154_DSN_OFFSET = 2,
+};
 
 
 /**
@@ -408,11 +427,13 @@ void otPlatRadioClearSrcMatchExtEntries(otInstance *aInstance)
  * @returns A pointer to the transmit buffer.
  *
  */
+
 /* NOTE: I am not sure where we need this, but it cannot be in a function scope. So probably global. Double check with other implementations. */
 otRadioFrame otRadioTXBuff;
+
 otRadioFrame *otPlatRadioGetTransmitBuffer(otInstance *aInstance)
 {
-    return otRadioTXBuff;
+    return &otRadioTXBuff;
 }
 
 /**

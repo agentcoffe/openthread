@@ -62,7 +62,7 @@ public:
      * Masks
      *
      */
-    enum
+    enum : uint8_t 
     {
         kAloc16Mask                 = 0xfc, ///< The mask for Aloc16.
         kRloc16ReservedBitMask      = 0x02, ///< The mask for the reserved bit of Rloc16.
@@ -72,7 +72,7 @@ public:
      * Constants
      *
      */
-    enum
+    enum : uint8_t 
     {
         kInterfaceIdentifierSize   = 8,  ///< Interface Identifier size in bytes.
         kIp6AddressStringSize      = 40, ///< Max buffer size in bytes to store an IPv6 address in string format.
@@ -82,7 +82,7 @@ public:
     /**
      * IPv6 Address Scopes
      */
-    enum
+    enum : uint8_t 
     {
         kNodeLocalScope      = 0,  ///< Node-Local scope
         kInterfaceLocalScope = 1,  ///< Interface-Local scope
@@ -354,7 +354,7 @@ public:
     static uint8_t PrefixMatch(const uint8_t *aPrefixA, const uint8_t *aPrefixB, uint8_t aMaxLength);
 
 private:
-    enum
+    enum : uint8_t 
     {
         kInterfaceIdentifierOffset = 8,  ///< Interface Identifier offset in bytes.
     };

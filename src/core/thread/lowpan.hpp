@@ -144,7 +144,7 @@ public:
                              const uint8_t *aBuf, uint16_t aBufLength);
 
 private:
-    enum
+    enum  : int16_t 
     {
         kHcDispatch        = 3 << 13,
         kHcDispatchMask    = 7 << 13,
@@ -216,7 +216,7 @@ OT_TOOL_PACKED_BEGIN
 class MeshHeader
 {
 public:
-    enum
+    enum : uint8_t 
     {
         kAdditionalHopsLeft = 1    ///< The additional value that is added to predicted value of the route cost.
     };
@@ -364,7 +364,7 @@ public:
     }
 
 private:
-    enum
+    enum : uint8_t
     {
         kDispatch         = 2 << 6,
         kDispatchMask     = 3 << 6,
@@ -404,7 +404,7 @@ public:
      * @retval FALSE  If the header does not match the Fragment Header dispatch value.
      *
      */
-    bool IsFragmentHeader(void) { return (HostSwap16(mDispatchSize) & kDispatchMask) == kDispatch; }
+    bool IsFragmentHeader(void) { return (HostSwap16(mDispatchSize) & kDispatchMask) == (uint16_t) kDispatch; }
 
     /**
      * This method returns the Fragment Header length.
@@ -475,9 +475,9 @@ public:
     }
 
 private:
-    enum
+    enum : uint16_t 
     {
-        kDispatch     = 3 << 14,
+        kDispatch     = (uint16_t) 3 << 14,
         kOffset       = 1 << 13,
         kDispatchMask = 0xd800,  ///< Accept FRAG1 and FRAGN only.
         kSizeMask     = 0x7ff,

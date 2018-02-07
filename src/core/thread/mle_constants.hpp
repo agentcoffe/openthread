@@ -42,7 +42,7 @@ namespace Mle {
  *
  */
 
-enum
+enum : uint8_t 
 {
     kMaxChildren                = OPENTHREAD_CONFIG_MAX_CHILDREN,
     kMaxChildKeepAliveAttempts  = 4,    ///< Maximum keep alive attempts before attempting to reattach to a new Parent
@@ -53,7 +53,7 @@ enum
  * MLE Protocol Constants
  *
  */
-enum
+enum : int32_t 
 {
     kVersion                       = 2,     ///< MLE Version
     kUdpPort                       = 19788, ///< MLE UDP Port
@@ -68,7 +68,7 @@ enum
     kMinTimeout                    = (((kMaxChildKeepAliveAttempts + 1) * kUnicastRetransmissionDelay) / 1000),  ///< Minimum timeout(s)
 };
 
-enum
+enum : int16_t 
 {
     kMinChildId                 = 1,     ///< Minimum Child ID
     kMaxChildId                 = 511,   ///< Maximum Child ID
@@ -80,7 +80,7 @@ enum
  * Routing Protocol Constants
  *
  */
-enum
+enum : int16_t 
 {
     kAdvertiseIntervalMin       = 1,                ///< ADVERTISEMENT_I_MIN (seconds)
     kAdvertiseIntervalMax       = 32,               ///< ADVERTISEMENT_I_MAX (seconds)
@@ -109,7 +109,7 @@ enum
  * Parent Priority values
  *
  */
-enum
+enum : int8_t 
 {
     kParentPriorityHigh        = 1,    // Parent Priority High
     kParentPriorityMedium      = 0,    // Parent Priority Medium (default)
@@ -117,7 +117,7 @@ enum
     kParentPriorityUnspecified = -2,   // Parent Priority Unspecified
 };
 
-enum
+enum : uint8_t 
 {
     kLinkQuality3LinkCost       = 1,    ///< Link Cost for Link Quality 3
     kLinkQuality2LinkCost       = 2,    ///< Link Cost for Link Quality 2
@@ -129,7 +129,7 @@ enum
  * Multicast Forwarding Constants
  *
  */
-enum
+enum : uint8_t 
 {
     kMplChildDataMessageTimerExpirations  = 0, ///< Number of MPL retransmissions for Children.
     kMplRouterDataMessageTimerExpirations = 2, ///< Number of MPL retransmissions for Routers.

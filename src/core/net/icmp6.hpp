@@ -73,7 +73,7 @@ public:
      * ICMPv6 Message Types
      *
      */
-    enum Type
+    enum Type : int16_t 
     {
         kTypeDstUnreach  = OT_ICMP6_TYPE_DST_UNREACH,   ///< Destination Unreachable
         kTypeEchoRequest = OT_ICMP6_TYPE_ECHO_REQUEST,  ///< Echo Request
@@ -84,7 +84,7 @@ public:
      * ICMPv6 Message Codes
      *
      */
-    enum Code
+    enum Code : int16_t 
     {
         kCodeDstUnreachNoRoute = OT_ICMP6_CODE_DST_UNREACH_NO_ROUTE,  ///< Destination Unreachable No Route
     };

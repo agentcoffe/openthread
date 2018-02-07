@@ -72,7 +72,7 @@ public:
      * Thread Network Data Type values.
      *
      */
-    enum Type
+    enum Type : uint8_t 
     {
         kTypeHasRoute          = 0,  ///< Has Route TLV
         kTypePrefix            = 1,  ///< Prefix TLV
@@ -155,7 +155,7 @@ public:
     void SetStable(void) { mType |= kStableMask; }
 
 private:
-    enum
+    enum : uint8_t 
     {
         kTypeOffset = 1,
         kTypeMask = 0x7f << kTypeOffset,
@@ -213,7 +213,7 @@ public:
     }
 
 private:
-    enum
+    enum : uint8_t 
     {
         kPreferenceOffset = 6,
         kPreferenceMask = 3 << kPreferenceOffset,
@@ -351,7 +351,7 @@ OT_TOOL_PACKED_BEGIN
 class BorderRouterEntry
 {
 public:
-    enum
+    enum : uint8_t 
     {
         kPreferenceOffset = 6,
         kPreferenceMask = 3 << kPreferenceOffset,
@@ -655,7 +655,7 @@ public:
     void SetContextLength(uint8_t aLength) { mContextLength = aLength; }
 
 private:
-    enum
+    enum : uint8_t 
     {
         kCompressFlag = 1 << 4,
         kContextIdOffset = 0,

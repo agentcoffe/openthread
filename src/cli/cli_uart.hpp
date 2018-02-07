@@ -105,7 +105,7 @@ public:
     static Uart *sUartServer;
 
 private:
-    enum
+    enum : int16_t 
     {
         kRxBufferSize = 512,
         kTxBufferSize = 1024,

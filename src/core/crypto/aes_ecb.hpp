@@ -53,7 +53,7 @@ namespace Crypto {
 class AesEcb
 {
 public:
-    enum
+    enum : uint8_t 
     {
         kBlockSize = 16,  ///< AES-128 block size (bytes).
     };

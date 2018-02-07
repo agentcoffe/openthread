@@ -104,7 +104,7 @@ enum AttachMode
 };
 
 /**
- * This enumeration represents the allocation of the ALOC Space
+ * This enum eration represents the allocation of the ALOC Space
  *
  */
 enum AlocAllocation
@@ -164,7 +164,7 @@ public:
         return rval;
     }
 
-    enum SecuritySuite
+    enum SecuritySuite : uint8_t
     {
         k154Security = 0,    ///< IEEE 802.15.4-2006 security.
         kNoSecurity  = 255,  ///< No security enabled.
@@ -278,7 +278,7 @@ public:
      * MLE Command Types.
      *
      */
-    enum Command
+    enum Command : uint8_t
     {
         kCommandLinkRequest          = 0,    ///< Link Reject
         kCommandLinkAccept           = 1,    ///< Link Accept
@@ -881,7 +881,7 @@ public:
     const MessageQueue &GetMessageQueue(void) const { return mDelayedResponses; }
 
 protected:
-    enum
+    enum : int16_t 
     {
         kMleMaxResponseDelay = 1000u,  ///< Maximum delay before responding to a multicast request.
     };
@@ -902,7 +902,7 @@ protected:
      *
      * @retval OT_ERROR_NONE     Successfully appended the header.
      * @retval OT_ERROR_NO_BUFS  Insufficient buffers available to append the header.
-     *
+     *friend class
      */
     otError AppendHeader(Message &aMessage, Header::Command aCommand);
 
@@ -1300,7 +1300,7 @@ protected:
      * States when searching for a parent.
      *
      */
-    enum ParentRequestState
+    enum ParentRequestState : uint8_t
     {
         kParentIdle,           ///< Not currently searching for a parent.
         kParentSynchronize,    ///< Looking to synchronize with a parent (after reset).
@@ -1315,7 +1315,7 @@ protected:
      * States when reattaching network using stored dataset
      *
      */
-    enum ReattachState
+    enum ReattachState : uint8_t
     {
         kReattachStop       = 0,   ///< Reattach process is disabled or finished
         kReattachStart      = 1,   ///< Start reattach process
@@ -1333,7 +1333,7 @@ protected:
     uint8_t mParentLeaderCost;
 
 private:
-    enum
+    enum : uint8_t 
     {
         kMleMessagePriority = Message::kPriorityHigh,
     };

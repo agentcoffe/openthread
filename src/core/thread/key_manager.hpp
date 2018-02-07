@@ -56,7 +56,7 @@ namespace ot {
 class KeyManager: public ThreadNetifLocator
 {
 public:
-    enum
+    enum : uint8_t 
     {
         kMaxKeyLength = 16,
     };
@@ -324,7 +324,7 @@ public:
     void SetSecurityPolicyFlags(uint8_t aSecurityPolicyFlags) { mSecurityPolicyFlags = aSecurityPolicyFlags; }
 
 private:
-    enum
+    enum : int32_t 
     {
         kMinKeyRotationTime = 1,
         kDefaultKeyRotationTime = 672,

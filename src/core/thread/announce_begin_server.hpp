@@ -80,7 +80,7 @@ public:
     otError SendAnnounce(uint32_t aChannelMask, uint8_t aCount, uint16_t aPeriod);
 
 private:
-    enum
+    enum : int16_t 
     {
         kDefaultCount  = 3,
         kDefaultPeriod = 1000,

@@ -63,43 +63,58 @@ typedef struct otInstance
     // Callbacks
     //
 
+    // 12 [1]
     ot::Ip6::NetifCallback mNetifCallback[OPENTHREAD_CONFIG_MAX_STATECHANGE_HANDLERS];
 
+    // 4
     otIp6ReceiveCallback mReceiveIp6DatagramCallback;
     void *mReceiveIp6DatagramCallbackContext;
 
+    // 4
     otHandleActiveScanResult mActiveScanCallback;
     void *mActiveScanCallbackContext;
 
+    // 4
     otHandleEnergyScanResult mEnergyScanCallback;
+    // 4
     void *mEnergyScanCallbackContext;
 
     //
     // State
     //
 
+    // 8
     ot::TaskletScheduler mTaskletScheduler;
+    // 4
     ot::TimerMilliScheduler mTimerMilliScheduler;
 #if OPENTHREAD_CONFIG_ENABLE_PLATFORM_USEC_TIMER
     ot::TimerMicroScheduler mTimerMicroScheduler;
 #endif
 
 #if !OPENTHREAD_ENABLE_MULTIPLE_INSTANCES
+    // 1
     ot::Crypto::MbedTls mMbedTls;
+    // 384
     ot::Crypto::Heap    mMbedTlsHeap;
 #endif
+    // 4340
     ot::Ip6::Ip6 mIp6;
+    // 6922
     ot::ThreadNetif mThreadNetif;
 
 #if OPENTHREAD_ENABLE_RAW_LINK_API
+    //#error "THIS SHOULD NOT BE HERE"
+    // 18
     ot::LinkRaw mLinkRaw;
 #endif // OPENTHREAD_ENABLE_RAW_LINK_API
 
 #if OPENTHREAD_ENABLE_APPLICATION_COAP
+    #error "THIS SHOULD NOT BE HERE"
     ot::Coap::Coap mApplicationCoap;
 #endif // OPENTHREAD_ENABLE_APPLICATION_COAP
 
 #if OPENTHREAD_CONFIG_ENABLE_DYNAMIC_LOG_LEVEL
+    #error "THIS SHOULD NOT BE HERE"
     otLogLevel mLogLevel;
 #endif // OPENTHREAD_CONFIG_ENABLE_DYNAMIC_LOG_LEVEL
 

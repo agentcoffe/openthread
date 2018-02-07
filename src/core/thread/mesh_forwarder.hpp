@@ -50,7 +50,7 @@
 
 namespace ot {
 
-enum
+enum : uint8_t 
 {
     kReassemblyTimeout = OPENTHREAD_CONFIG_6LOWPAN_REASSEMBLY_TIMEOUT,
 };
@@ -223,12 +223,12 @@ public:
     const otIpCounters &GetCounters(void) const { return mIpCounters; }
 
 private:
-    enum
+    enum : int16_t 
     {
         kStateUpdatePeriod     = 1000,  ///< State update period in milliseconds.
     };
 
-    enum
+    enum : uint8_t 
     {
         /**
          * Maximum number of tx attempts by `MeshForwarder` for an outbound indirect frame (for a sleepy child). The
@@ -245,7 +245,7 @@ private:
         kSupervisionMsgAckRequest   = (OPENTHREAD_CONFIG_SUPERVISION_MSG_NO_ACK_REQUEST == 0) ? true : false,
     };
 
-    enum MessageAction                   ///< Defines the action parameter in `LogMessageInfo()` method.
+    enum  MessageAction : uint8_t        ///< Defines the action parameter in `LogMessageInfo()` method.
     {
         kMessageReceive,                 ///< Indicates that the message was received.
         kMessageTransmit,                ///< Indicates that the message was sent.

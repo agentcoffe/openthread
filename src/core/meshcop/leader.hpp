@@ -107,7 +107,7 @@ public:
     void SetEmptyCommissionerData(void);
 
 private:
-    enum
+    enum : uint8_t 
     {
         kTimeoutLeaderPetition = 50, ///< TIMEOUT_LEAD_PET (seconds)
     };

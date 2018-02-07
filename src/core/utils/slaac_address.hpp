@@ -118,7 +118,7 @@ public:
     otError CreateIid(otInstance *aInstance, otNetifAddress *aAddress);
 
 private:
-    enum
+    enum : uint8_t 
     {
         kMaxRetries = 255,
     };
